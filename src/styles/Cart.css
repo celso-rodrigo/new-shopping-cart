@@ -1,0 +1,11 @@
+.cart {
+  position: fixed;
+  right: 0;
+  transition: 0.6s;
+  width: 350px;
+  height: 100%;
+  background-color: lightblue;}
+
+.cart-hidden {
+  transform: translateY(-100%);
+}
