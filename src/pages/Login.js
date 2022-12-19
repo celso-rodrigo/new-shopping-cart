@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import * as e from "../helpers/loginErrorMessages";
 import { useNavigate } from "react-router-dom";
+import pwVisible from "../images/pwVisible.svg";
+import pwHidden from "../images/pwHidden.svg";
 
 function Login() {
 	const navigate = useNavigate();
+  const [showPassword, setShowPassword] = useState(false);
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [problem, setProblem] = useState("");
@@ -42,9 +45,14 @@ function Login() {
 				/>
 			</label>
 			<label>
+				<img
+					src={showPassword ? pwVisible : pwHidden}
+					onClick={() => setShowPassword((prevState) => (!prevState))}
+					alt="Toggle password."
+				/>
 				Password
 				<input
-					type="password"
+					type={showPassword ? "text" : "password"}
 					value={password}
 					onChange={({target}) => setPassword(target.value)}
 					/>
