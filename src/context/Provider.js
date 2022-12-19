@@ -4,13 +4,16 @@ import PropTypes from "prop-types";
 
 function Provider({ children }) {
   const [showCart, setShowCart] = useState(false);
-  const [problem, setProblem] = useState("");
+  const [problem, setProblem] = useState("Search for something.");
   const [searchResults, setSearchResults] = useState([]);
+  const [cart, setCart] = useState([]);
 
   const providerValue = {
     showCart,
     problem,
     searchResults,
+    cart,
+    setCart,
     setSearchResults,
     setProblem,
     setShowCart,

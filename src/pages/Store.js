@@ -15,12 +15,13 @@ function Store() {
 			<SearchBar />
 			{ problem.length > 0 
 				?<p>{problem}</p>
-				: searchResults.map((result) => 
+				: searchResults.map((result, index) => 
 					<ItemCard 
 						name={result.title}
 						price={result.price}
 						thumbnail={result.thumbnail}
-						key={result.id} />)}
+						id={result.id}
+						key={index} />)}
 		</div>
   );
 }
