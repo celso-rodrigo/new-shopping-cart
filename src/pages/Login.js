@@ -3,6 +3,7 @@ import * as e from "../helpers/loginErrorMessages";
 import { useNavigate } from "react-router-dom";
 import pwVisible from "../images/pwVisible.svg";
 import pwHidden from "../images/pwHidden.svg";
+import loginArt from "../images/loginArt.svg";
 
 function Login() {
 	const navigate = useNavigate();
@@ -35,31 +36,37 @@ function Login() {
 	};
 
   return (
-		<form>
-			<label>
-				Email
-				<input
-					type="email"
-					value={email}
-					onChange={({target}) => setEmail(target.value)}
-				/>
-			</label>
-			<label>
-				<img
-					src={showPassword ? pwVisible : pwHidden}
-					onClick={() => setShowPassword((prevState) => (!prevState))}
-					alt="Toggle password."
-				/>
-				Password
-				<input
-					type={showPassword ? "text" : "password"}
-					value={password}
-					onChange={({target}) => setPassword(target.value)}
+		<div className="login">
+			<img src={loginArt} alt="Login art." className="login-art" />
+			<form className="login-form">
+				<label>
+					Email
+					<input
+						type="email"
+						value={email}
+						onChange={({target}) => setEmail(target.value)}
 					/>
-			</label>
-			<p>{problem.length > 0 && problem}</p>
-			<button type="button" onClick={validateLogin}>Login</button>
-		</form>
+				</label>
+				<label className="pw-container">
+					Password
+					<img
+						src={showPassword ? pwVisible : pwHidden}
+						onClick={() => setShowPassword((prevState) => (!prevState))}
+						alt="Toggle password."
+						className="toggle-pw"
+					/>
+					<input
+						type={showPassword ? "text" : "password"}
+						value={password}
+						onChange={({target}) => setPassword(target.value)}
+						/>
+				</label>
+				<div className="login-container">
+					<p className="problem">{problem.length > 0 && problem}</p>
+					<button type="button" onClick={validateLogin} className="login-btn">Login</button>
+				</div>
+			</form>
+		</div>
   );
 }
 
