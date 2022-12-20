@@ -44,6 +44,7 @@ function Login() {
 					<input
 						type="email"
 						value={email}
+						maxLength="30"
 						onChange={({target}) => setEmail(target.value)}
 					/>
 				</label>
@@ -56,12 +57,13 @@ function Login() {
 						className="toggle-pw"
 					/>
 					<input
+						maxLength="30"
 						type={showPassword ? "text" : "password"}
 						value={password}
 						onChange={({target}) => setPassword(target.value)}
 						/>
 				</label>
-				<div className="login-container">
+				<div className="login-btn-container">
 					<p className="problem">{problem.length > 0 && problem}</p>
 					<button type="button" onClick={validateLogin} className="login-btn">Login</button>
 				</div>

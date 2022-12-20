@@ -1,6 +1,5 @@
 .login {
 	color: white;
-	font-family: var(--font-1);
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -44,8 +43,8 @@
 .toggle-pw {
 	cursor: pointer;
 	position: absolute;
-	bottom: 5px;
-	right: 5px;
+	bottom: 10px;
+	right: 10px;
 	width: 20px;
 }
 
@@ -55,15 +54,16 @@
 	color: var(--color-4);
 }
 
-.login-container {
+.login-btn-container {
 	display: flex;
 	flex-direction: column;
 	width: 100%;
-	gap: 10px;
+	gap: 15px;
 }
 
 .login-btn {
 	align-self: center;
+	height: 40px;
 	width: 100px;
 	padding: 5px;
 	color: var(--color-1);
@@ -91,6 +91,11 @@
 	.login-form {
 		width: 300px;
 		height: 400px;
+	}
+
+	.login-btn-container {
+		gap: 25px;
+		font-size: 0.8rem;
 	}
 }
 

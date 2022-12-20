@@ -7,12 +7,15 @@ function Provider({ children }) {
   const [problem, setProblem] = useState("Search for something.");
   const [searchResults, setSearchResults] = useState([]);
   const [cart, setCart] = useState([]);
+  const [productsLoading, setProductsLoading] = useState(false);
 
   const providerValue = {
     showCart,
     problem,
-    searchResults,
     cart,
+    searchResults,
+    productsLoading,
+    setProductsLoading,
     setCart,
     setSearchResults,
     setProblem,

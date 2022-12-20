@@ -1,10 +1,9 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import Context from "../context/Context";
-import cart from "../images/cart.svg";
+import cartIcon from "../images/cart.svg";
 
 function StoreHeader() {
-	const [items] = useState(0);
-	const { setShowCart } = useContext(Context);
+	const { setShowCart, cart } = useContext(Context);
 
   return (
 		<header>
@@ -16,8 +15,10 @@ function StoreHeader() {
 				onClick={() => setShowCart((prevState) => (!prevState))}
 			>	
 				<div>
-					{items > 0 && <span className="items">{items}</span>}
-					<img src={cart} alt="Cart." className="cart-icon" />
+					{cart.length > 0 && <span className="items">
+						{cart.reduce((acc, curr) => acc + curr.quantity, 0)}
+					</span>}
+					<img src={cartIcon} alt="Cart." className="cart-icon" />
 				</div>
 			</button>
 		</header>
