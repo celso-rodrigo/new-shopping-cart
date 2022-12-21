@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import Context from "../context/Context";
+import add from "../images/add.svg";
 
 function ItemCard({name, price, thumbnail, id}) {
 	const { setCart, cart } = useContext(Context);
@@ -27,7 +28,7 @@ function ItemCard({name, price, thumbnail, id}) {
 				type="button"
 				onClick={addToCart}
 			>
-				Add to cart
+				<img src={add} alt="Add item to cart." />
 			</button>
 		</div>
   );

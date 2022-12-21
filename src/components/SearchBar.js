@@ -53,7 +53,14 @@ function SearchBar() {
 	};
 
   return (
-		<>
+		<div className="search-bar">
+			<select value={filterType} onChange={({target}) => handleFilter(target.value)}>
+				<option value="" disabled hidden>Sort By</option>
+				<option value="low">Lowest Price</option>
+				<option value="high">Highest Price</option>
+				<option value="name-asc">Name (asc)</option>
+				<option value="name-desc">Name (desc)</option>
+			</select>
 			<input 
 				type="text"
 				value={search}
@@ -64,17 +71,9 @@ function SearchBar() {
 				type="button"
 				onClick={() => resetSearch("Enter", search)}
 			>
-				<img src={glass} alt="Search products." />
+				<img src={glass} className="search-glass" alt="Search products." />
 			</button>
-
-			<select value="" onChange={({target}) => handleFilter(target.value)}>
-				<option value="" disabled hidden>Sort By</option>
-				<option value="low">Lowest Price</option>
-				<option value="high">Highest Price</option>
-				<option value="name-asc">Name (asc)</option>
-				<option value="name-desc">Name (desc)</option>
-			</select>
-		</>
+		</div>
   );
 }
 
