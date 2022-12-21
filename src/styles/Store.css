@@ -48,3 +48,102 @@
   filter: invert(100%) sepia(11%) saturate(2406%) hue-rotate(179deg)
     brightness(101%) contrast(90%);
 }
+
+.store-problem {
+  font-weight: 100;
+  color: var(--color-2);
+  font-size: 3rem;
+  text-align: center;
+  width: 100%;
+  padding-top: 30px;
+}
+
+.item-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 25px;
+}
+
+.item-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  box-shadow: 0 0 3px var(--color-3);
+  width: 20%;
+  height: 300px;
+  background-color: white;
+}
+
+.item-card .item-image {
+  width: 150px;
+  padding-top: 5px;
+}
+
+.item-card .item-name {
+  font-size: 1rem;
+  text-align: center;
+  border-top: 1px solid var(--color-3);
+  padding: 10px;
+  width: 100%;
+  color: var(--color-3);
+}
+
+.item-card .currency {
+  color: var(--color-5);
+  padding-right: 5px;
+}
+
+.item-card button {
+  height: 40px;
+  width: 100%;
+  border: none;
+  background-color: var(--color-4);
+  cursor: pointer;
+}
+
+.item-card button img {
+  height: 100%;
+  filter: invert(100%) sepia(11%) saturate(2406%) hue-rotate(179deg)
+    brightness(101%) contrast(90%);
+}
+
+@media screen and (max-width: 1200px) {
+  .item-card {
+    width: 30%;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .item-card {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .search-bar {
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .search-bar select,
+  .search-bar select option {
+    width: 100vw;
+  }
+
+  .search-bar input {
+    width: 80vw;
+  }
+
+  .search-bar button {
+    width: 20vw;
+    border-radius: 0;
+  }
+
+  .item-card {
+    width: 80%;
+  }
+}

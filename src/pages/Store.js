@@ -9,7 +9,8 @@ function Store() {
 	const { problem, searchResults, productsLoading } = useContext(Context);
 
 	const loadCard = () => {
-		if (productsLoading) return (<h2>Loading...</h2>);
+		if (productsLoading) return (<div className="loading" />);
+		console.log(searchResults);
 		return searchResults.map((result, index) =>(
 					<ItemCard 
 						name={result.title}
@@ -25,9 +26,11 @@ function Store() {
 			<StoreHeader />
 			<Cart />
 			<SearchBar />
-			{ problem.length > 0
-				? <p>{problem}</p>
-				: loadCard() }
+			<div className="item-card-container">
+				{ problem.length > 0
+					? <p className="store-problem">{problem}</p>
+					: loadCard() }
+			</div>
 		</div>
   );
 }

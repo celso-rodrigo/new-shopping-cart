@@ -24,3 +24,20 @@ button:disabled img {
 	opacity: 0.5;
 	cursor: not-allowed;
 }
+
+.loading {
+  animation: loading 1s both infinite;
+  border: 8px solid lightgray;
+  border-radius: 100%;
+  border-top-color: var(--color-5);
+  height: 80px;
+  margin: auto;
+  transition: 1s;
+  width: 80px;
+}
+
+@keyframes loading {
+  to {
+    transform: rotate(2turn);
+  }
+}

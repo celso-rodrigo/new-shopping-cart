@@ -20,10 +20,10 @@ function ItemCard({name, price, thumbnail, id}) {
 	};
 
   return (
-		<div>
-			<h2>{name}</h2>
-			<img src={thumbnail} alt={name} />
-			<h3>{`R$${price.toFixed(2)}`}</h3>
+		<div className="item-card">
+			<img src={thumbnail} alt={name} className="item-image" />
+			<h2 className="item-name">{name}</h2>
+			<h3><span className="currency">R$</span>{price.toFixed(2)}</h3>
 			<button
 				type="button"
 				onClick={addToCart}

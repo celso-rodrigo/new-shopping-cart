@@ -110,11 +110,8 @@ header {
     scale: 0.7;
   }
 }
-@media screen and (max-width: 430px) {
-  body {
-    background-color: red;
-  }
 
+@media screen and (max-width: 430px) {
   header {
     height: 60px;
   }
