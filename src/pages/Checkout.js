@@ -6,7 +6,7 @@ function Checkout() {
 	const [buying, setBuying] = useState(true);
 
   return (
-		<div>
+		<div className="checkout">
 			{buying
 				? <CheckoutForm setBuying={setBuying}/>
 				: <FakeCheckout />

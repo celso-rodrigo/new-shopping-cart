@@ -16,20 +16,20 @@ function FakeCheckout() {
 	waitForFakeLoad();
 
 	return (
-		<div>
+		<>
 			{fakeLoad
 				? <div className="loading"/>
 				: (
 					<>
 						<h1>Thanks for choosing us!</h1>
 						<img src={success} alt="Success purchase art."/>
-						<div>
+						<div className="navigate-links">
 							<Link to="/store">Continue shopping</Link>
 							<Link to="/">Log out</Link>
 						</div>
 					</>
 				)}
-		</div>
+		</>
   );
 }
 
