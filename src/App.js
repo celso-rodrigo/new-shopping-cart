@@ -4,6 +4,7 @@ import Store from "./pages/Store";
 import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
 import "./styles";
+import Checkout from "./pages/Checkout";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Login />} />
         <Route exact path="/store" element={<Store />} />
+        <Route exact path="/checkout" element={<Checkout />} />
         <Route exact path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>

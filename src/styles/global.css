@@ -1,28 +1,28 @@
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: var(--font-1);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-1);
 }
 
 :root {
-	--color-1: #eff0f3;
-	--color-2: #3F3D56;
-	--color-3: #2a2a2a;
-	--color-4: #ff8e3c;
-	--color-5: #e4155a;
+  --color-1: #eff0f3;
+  --color-2: #3f3d56;
+  --color-3: #2a2a2a;
+  --color-4: #ff8e3c;
+  --color-5: #e4155a;
 
-	--font-1: 'Ubuntu', sans-serif;
-	--font-2: 'Fredoka One', cursive;
+  --font-1: "Ubuntu", sans-serif;
+  --font-2: "Fredoka One", cursive;
 }
 
 body {
-	background-color: var(--color-1);
+  background-color: var(--color-1);
 }
 
 button:disabled img {
-	opacity: 0.5;
-	cursor: not-allowed;
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 .loading {

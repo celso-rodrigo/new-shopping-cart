@@ -9,6 +9,13 @@ function Provider({ children }) {
   const [cart, setCart] = useState([]);
   const [productsLoading, setProductsLoading] = useState(false);
 
+  const getTotal = () => {
+		if (!cart.length) return <p className="cart-empy-text">Cart is empty</p>;
+		if (cart.length === 1) return (cart[0].price * cart[0].quantity).toFixed(2);
+		const total = cart.reduce((acc, curr) => curr.price * curr.quantity + acc, 0).toFixed(2);
+		return <p>{`Total: R$${total}`}</p>;
+	};
+
   const providerValue = {
     showCart,
     problem,
@@ -20,6 +27,7 @@ function Provider({ children }) {
     setSearchResults,
     setProblem,
     setShowCart,
+    getTotal,
   };
 
   return <Context.Provider value={providerValue}>{children}</Context.Provider>;

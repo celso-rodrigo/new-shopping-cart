@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import notFound from "../images/notFound.svg";
 
 function NotFound() {
@@ -6,13 +7,12 @@ function NotFound() {
 		<div className="not-found">
 			<h1 className="not-found-text">Page not found</h1>
 			<img src={notFound} alt="Page not found art." className="not-found-img" />
-			<a
-				type="button"
-				href="http://localhost:3000"
+			<Link
+				to="/"
 				className="not-found-back"
 			>
 				Go back to log in
-			</a>
+			</Link>
 		</div>
   );
 }

@@ -22,16 +22,18 @@ function Store() {
 	};
 
   return (
-		<div className="store">
-			<StoreHeader />
+		<>
 			<Cart />
-			<SearchBar />
-			<div className="item-card-container">
-				{ problem.length > 0
-					? <p className="store-problem">{problem}</p>
-					: loadCard() }
+			<div className="store">
+				<StoreHeader />
+				<SearchBar />
+				<div className="item-card-container">
+					{ problem.length > 0
+						? <p className="store-problem">{problem}</p>
+						: loadCard() }
+				</div>
 			</div>
-		</div>
+		</>
   );
 }
 
