@@ -16,7 +16,7 @@ function FakeCheckout() {
 	waitForFakeLoad();
 
 	return (
-		<>
+		<div className="finished">
 			{fakeLoad
 				? <div className="loading"/>
 				: (
@@ -29,7 +29,7 @@ function FakeCheckout() {
 						</div>
 					</>
 				)}
-		</>
+		</div>
   );
 }
 

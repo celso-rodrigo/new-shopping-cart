@@ -12,7 +12,7 @@ function StoreHeader() {
 	};
 
   return (
-		<header>
+		<header className="site-header">
 			<div className="logo">
 				<div className="logo-image">
 					<img src={logoIconFill} alt="logo." className="logo-icon" />

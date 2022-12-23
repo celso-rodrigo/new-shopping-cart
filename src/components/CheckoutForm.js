@@ -65,9 +65,13 @@ function CheckoutForm({setBuying}) {
 	};
 
 	return (
-		<form>
-			<div>
-				<h3>review your order</h3>
+		<form className="checkout-form">
+			<div className="order">
+				<header className="order-header">
+					<h3>Review your order</h3>
+					{getTotal()}
+				</header>
+
 				{cart.map((item) => (
 				<CartItemCard
 					name={item.name}
@@ -78,135 +82,142 @@ function CheckoutForm({setBuying}) {
 					key={item.id}
 				/>
 				))}
-				{getTotal()}
 			</div>
-			<div>
-				<h3>Payment Method</h3>
-				<select
-					defaultValue=""
-					onChange={({target}) =>
-					setPaymentInfo((prevState) =>
-						({...prevState, card: target.value}))}
-				>
-					<option disabled hidden value="">Payment method</option>
-					<option value="visa">Visa</option>
-					<option value="hipercard">Hipercard</option>
-					<option value="mastercard">MasterCard</option>
-				</select>
-				<label>
-					Card number
-					<input
-						type="text"
-						maxLength="16"
-						value={paymentInfo.cardNumber}
+			<div className="checkout-info">
+			<div className="billing-info">
+					<h3>Billing Information</h3>
+					<label>
+						First name
+						<input
+							type="text"
+							value={paymentInfo.firstName}
+							onChange={({target}) =>
+								setPaymentInfo((prevState) =>
+									({...prevState, firstName: clearNumbers(target.value)}))}
+						/>
+					</label>
+					<label>
+						Last name
+						<input
+							type="text"
+							value={paymentInfo.lastName}
+							onChange={({target}) =>
+								setPaymentInfo((prevState) =>
+									({...prevState, lastName: clearNumbers(target.value)}))}
+						/>
+					</label>
+					<label>
+						Billing address
+						<input
+							type="text"
+							value={paymentInfo.adressOne}
+							onChange={({target}) =>
+								setPaymentInfo((prevState) =>
+									({...prevState, adressOne: target.value}))}
+						/>
+					</label>
+					<label>
+						Billing address, line 2
+						<input type="text" />
+					</label>
+					<label>
+						City
+						<input
+							type="text"
+							value={paymentInfo.city}
+							onChange={({target}) =>
+								setPaymentInfo((prevState) =>
+									({...prevState, city: clearNumbers(target.value)}))}
+						/>
+					</label>
+					<label>
+						Zip or postal code
+						<input
+							type="text"
+							maxLength="5"
+							value={paymentInfo.postal}
+							onChange={({target}) =>
+								setPaymentInfo((prevState) =>
+									({...prevState, postal: clearWords(target.value)}))}
+						/>
+					</label>
+					<label>
+						Phone number
+						<input
+							type="text"
+							maxLength="17"
+							value={paymentInfo.phone}
+							onChange={({target}) =>
+								setPaymentInfo((prevState) =>
+									({...prevState, phone: formatCellphone(target.value)}))}
+						/>
+					</label>
+					<select
+						defaultValue=""
 						onChange={({target}) =>
-							setPaymentInfo((prevState) =>
-								({...prevState, cardNumber: clearWords(target.value)}))}
-					/>
-				</label>
-				<label>
-					Expiration date
-					<input
-						type="text"
-						maxLength="5"
-						value={paymentInfo.expiration}
+						setPaymentInfo((prevState) =>
+							({...prevState, contry: target.value}))}
+					>
+						<option disabled hidden value="">Country</option>
+						{contryList.map((country) => <option key={country}>{country}</option>)}
+					</select>
+				</div>
+				<div className="payment-info">
+					<h3>Payment Method</h3>
+					<select
+						defaultValue=""
 						onChange={({target}) =>
-							setPaymentInfo((prevState) =>
-								({...prevState, expiration: formatDate(target.value)}))}
-					/>
-				</label>
-				<label>
-					Security code
-					<input 
-						type="text"
-						maxLength="3"
-						value={paymentInfo.securityCode}
-						onChange={({target}) =>
-							setPaymentInfo((prevState) =>
-								({...prevState, securityCode: clearWords(target.value)}))}
-					/>
-				</label>
+						setPaymentInfo((prevState) =>
+							({...prevState, card: target.value}))}
+					>
+						<option disabled hidden value="">Payment method</option>
+						<option value="visa">Visa</option>
+						<option value="hipercard">Hipercard</option>
+						<option value="mastercard">MasterCard</option>
+					</select>
+					<label>
+						Card number
+						<input
+							type="text"
+							maxLength="16"
+							value={paymentInfo.cardNumber}
+							onChange={({target}) =>
+								setPaymentInfo((prevState) =>
+									({...prevState, cardNumber: clearWords(target.value)}))}
+						/>
+					</label>
+					<label>
+						Expiration date
+						<input
+							type="text"
+							maxLength="5"
+							value={paymentInfo.expiration}
+							onChange={({target}) =>
+								setPaymentInfo((prevState) =>
+									({...prevState, expiration: formatDate(target.value)}))}
+						/>
+					</label>
+					<label>
+						Security code
+						<input 
+							type="text"
+							maxLength="3"
+							value={paymentInfo.securityCode}
+							onChange={({target}) =>
+								setPaymentInfo((prevState) =>
+									({...prevState, securityCode: clearWords(target.value)}))}
+						/>
+					</label>
+					<p className="problem">{problem.length > 0 && problem}</p>
+					<button
+						type="button" 
+						onClick={validatePaymentInfo} 
+						className="checkout-btn"
+					>
+						Finish buying
+					</button>
+				</div>
 			</div>
-			<div>
-				<h3>Billing Information</h3>
-				<label>
-					First name
-					<input
-						type="text"
-						value={paymentInfo.firstName}
-						onChange={({target}) =>
-							setPaymentInfo((prevState) =>
-								({...prevState, firstName: clearNumbers(target.value)}))}
-					/>
-				</label>
-				<label>
-					Last name
-					<input
-						type="text"
-						value={paymentInfo.lastName}
-						onChange={({target}) =>
-							setPaymentInfo((prevState) =>
-								({...prevState, lastName: clearNumbers(target.value)}))}
-					/>
-				</label>
-				<label>
-					Billing address
-					<input
-						type="text"
-						value={paymentInfo.adressOne}
-						onChange={({target}) =>
-							setPaymentInfo((prevState) =>
-								({...prevState, adressOne: target.value}))}
-					/>
-				</label>
-				<label>
-					Billing address, line 2
-					<input type="text" />
-				</label>
-				<label>
-					City
-					<input
-						type="text"
-						value={paymentInfo.city}
-						onChange={({target}) =>
-							setPaymentInfo((prevState) =>
-								({...prevState, city: clearNumbers(target.value)}))}
-					/>
-				</label>
-				<label>
-					Zip or postal code
-					<input
-						type="text"
-						maxLength="5"
-						value={paymentInfo.postal}
-						onChange={({target}) =>
-							setPaymentInfo((prevState) =>
-								({...prevState, postal: clearWords(target.value)}))}
-					/>
-				</label>
-				<label>
-					Phone number
-					<input
-						type="text"
-						maxLength="17"
-						value={paymentInfo.phone}
-						onChange={({target}) =>
-							setPaymentInfo((prevState) =>
-								({...prevState, phone: formatCellphone(target.value)}))}
-					/>
-				</label>
-				<select
-					defaultValue=""
-					onChange={({target}) =>
-					setPaymentInfo((prevState) =>
-						({...prevState, contry: target.value}))}
-				>
-					<option disabled hidden value="">Country</option>
-					{contryList.map((country) => <option key={country}>{country}</option>)}
-				</select>
-			</div>
-			<p className="problem">{problem.length > 0 && problem}</p>
-			<button type="button" onClick={validatePaymentInfo}>Finish buying</button>
 		</form>
   );
 }

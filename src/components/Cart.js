@@ -11,10 +11,10 @@ function Cart() {
 			{cart.length > 0 && (
 				<>
 					<div className="payout">
-						{getTotal()}
 							<Link
 								to="/checkout"
 							>
+								{getTotal()}
 								Proceed to payout
 							</Link>
 					</div>

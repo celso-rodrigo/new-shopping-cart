@@ -36,7 +36,6 @@
 }
 
 .payout {
-  text-decoration: none;
   color: var(--color-1);
   border-radius: 10px;
   background-color: var(--color-5);
@@ -45,15 +44,19 @@
 }
 
 .payout a {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   color: var(--color-1);
   text-decoration: none;
+  font-weight: 700;
 }
 
 .cart-item-card {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  font-size: 0.7rem;
+  font-size: 0.9rem;
   gap: 10px;
 }
 

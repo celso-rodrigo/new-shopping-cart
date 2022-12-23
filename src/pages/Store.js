@@ -10,7 +10,6 @@ function Store() {
 
 	const loadCard = () => {
 		if (productsLoading) return (<div className="loading" />);
-		console.log(searchResults);
 		return searchResults.map((result, index) =>(
 					<ItemCard 
 						name={result.title}

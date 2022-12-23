@@ -1,4 +1,4 @@
-header {
+.site-header {
   position: fixed;
   left: 0;
   right: 0;
@@ -97,7 +97,7 @@ header {
 }
 
 @media screen and (max-width: 601px) {
-  header {
+  .site-header {
     height: 70px;
   }
 
@@ -112,7 +112,7 @@ header {
 }
 
 @media screen and (max-width: 430px) {
-  header {
+  .site-header {
     height: 60px;
   }
 
