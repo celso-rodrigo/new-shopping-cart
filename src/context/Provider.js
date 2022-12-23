@@ -11,9 +11,12 @@ function Provider({ children }) {
 
   const getTotal = () => {
 		if (!cart.length) return <p className="cart-empy-text">Cart is empty</p>;
-		if (cart.length === 1) return (cart[0].price * cart[0].quantity).toFixed(2);
+		if (cart.length === 1) {
+      const total = (cart[0].price * cart[0].quantity).toFixed(2);
+      return <p>Total: <span className="total">{`R$ ${total}`}</span></p>;
+    } 
 		const total = cart.reduce((acc, curr) => curr.price * curr.quantity + acc, 0).toFixed(2);
-		return <p>{`Total: R$${total}`}</p>;
+		return <p>Total: <span className="total">{`R$ ${total}`}</span></p>;
 	};
 
   const providerValue = {

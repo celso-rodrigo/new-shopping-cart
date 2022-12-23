@@ -3,7 +3,7 @@ import CheckoutForm from "../components/CheckoutForm";
 import FakeCheckout from "../components/FakeCheckout";
 
 function Checkout() {
-	const [buying, setBuying] = useState(trueg);
+	const [buying, setBuying] = useState(true);
 
   return (
 		<div>

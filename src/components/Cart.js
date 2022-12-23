@@ -8,14 +8,16 @@ function Cart() {
 
 	return (
 		<aside className={`cart ${showCart ? "" : "cart-hidden"}`}>
-			{getTotal()}
 			{cart.length > 0 && (
 				<>
-					<Link
-						to="/checkout"
-					>
-						Proceed to payout
-					</Link>
+					<div className="payout">
+						{getTotal()}
+							<Link
+								to="/checkout"
+							>
+								Proceed to payout
+							</Link>
+					</div>
 					{cart.map((item) => (
 						<CartItemCard
 							name={item.name}
@@ -29,6 +31,7 @@ function Cart() {
 					<button
 						type="button"
 						onClick={() => setCart([])}
+						className="clear-cart-btn"
 					>
 						Clear Cart
 					</button>
