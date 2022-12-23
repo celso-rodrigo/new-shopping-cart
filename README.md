@@ -1,11 +1,11 @@
 <h1>New Shopping Cart</h1>
+A e-commerce application.
 
 ***
 
 <details>
 <summary><h2>Read in English :us:</h2></summary><br />
 <h3><a href="https://celso-rodrigo.github.io/whatToDo/">Take a look at the project!</a></h3>
-
 <h2>About</h2>
 <p>This project is a redesign of <a href="https://github.com/celso-rodrigo/shopping-cart">Shopping Car</a>. Now made with React, this project has more functionality than the old one developed only with JavaScript, HTML, and CSS.</p>
 <p>New Shopping Cart is an e-commerce application developed with the help of <a href="https://developers.mercadolivre.com.br/pt_br/itens-e-buscas">Mercado Livre API</a>. In it you can search for products, add or remove them from your cart, and complete the purchase by choosing the desired payment method.</p>
