@@ -8,7 +8,7 @@ function NotFound() {
 			<h1 className="not-found-text">Page not found</h1>
 			<img src={notFound} alt="Page not found art." className="not-found-img" />
 			<Link
-				to="/"
+				to="../"
 				className="not-found-back"
 			>
 				Go back to log in

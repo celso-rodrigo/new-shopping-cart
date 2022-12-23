@@ -12,7 +12,7 @@ function Cart() {
 				<>
 					<div className="payout">
 							<Link
-								to="/checkout"
+								to="../checkout"
 							>
 								{getTotal()}
 								Proceed to payout

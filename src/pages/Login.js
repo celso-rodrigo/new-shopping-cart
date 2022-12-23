@@ -32,7 +32,7 @@ function Login() {
 
 	const validateLogin = () => {
 		const validInputs = validateEmail() && validatePassword();
-		if (validInputs) navigate("store");
+		if (validInputs) navigate("./store");
 	};
 
   return (

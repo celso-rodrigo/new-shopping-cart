@@ -24,8 +24,8 @@ function FakeCheckout() {
 						<h1>Thanks for choosing us!</h1>
 						<img src={success} alt="Success purchase art."/>
 						<div className="navigate-links">
-							<Link to="/store">Continue shopping</Link>
-							<Link to="/">Log out</Link>
+							<Link to="../store">Continue shopping</Link>
+							<Link to="../">Log out</Link>
 						</div>
 					</>
 				)}
