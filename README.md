@@ -1,5 +1,5 @@
 <h1>New Shopping Cart</h1>
-A e-commerce application.
+An e-commerce application.
 
 ***
 
